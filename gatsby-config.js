@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `yegoo blog`,
-    subtitle: `software developer`,
+    title: `여구의 삽질이야기`,
+    subtitle: `개발자`,
     description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
     author: `yeogandalf@gmail.com`,
   },

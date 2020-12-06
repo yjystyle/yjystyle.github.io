@@ -29,6 +29,7 @@
     "typeface-nunito": "1.1.3"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "^2.0.5"
   },
   "keywords": [
@@ -37,7 +38,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop",
+    "deploy": "gatsby build && gh-pages -d public -b master",
     "//": "gatsby build && gh-pages -d public -b master -r https://github.com/yjystyle/yjystyle.github.io",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
