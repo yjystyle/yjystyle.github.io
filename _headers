@@ -39,6 +39,15 @@
   Link: </component---src-templates-blog-post-js-91a5784645018732ea7f.js>; rel=preload; as=script
   Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
   Link: </page-data/blog/junyeong/page-data.json>; rel=preload; as=fetch; crossorigin
+/blog/junyeong2
+  Link: </webpack-runtime-3454912f57bb8ba81f8e.js>; rel=preload; as=script
+  Link: </styles-89fd2ae28bdf06750a71.js>; rel=preload; as=script
+  Link: </framework-5fc6169171e885c3b522.js>; rel=preload; as=script
+  Link: </app-c2af58a517999069155b.js>; rel=preload; as=script
+  Link: </commons-9ae0dbbeb5b6397320bb.js>; rel=preload; as=script
+  Link: </component---src-templates-blog-post-js-91a5784645018732ea7f.js>; rel=preload; as=script
+  Link: </page-data/app-data.json>; rel=preload; as=fetch; crossorigin
+  Link: </page-data/blog/junyeong2/page-data.json>; rel=preload; as=fetch; crossorigin
 /404/
   Link: </webpack-runtime-3454912f57bb8ba81f8e.js>; rel=preload; as=script
   Link: </styles-89fd2ae28bdf06750a71.js>; rel=preload; as=script
