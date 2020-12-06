@@ -1,7 +1,7 @@
 ---
 title: "Spring Retry 공부"
 date: "2020-12-07"
-draft: true
+draft: false
 path: "/blog/junyeong2"
 tags: testing, documnentation
 ---
