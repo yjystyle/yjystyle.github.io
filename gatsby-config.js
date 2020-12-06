@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `여구 블로그`,
+    title: `yegoo blog`,
     subtitle: `software developer`,
     description: `A minimal blog starter built with Gatsbyjs. The needed Gatsby files are included.`,
     author: `yeogandalf@gmail.com`,
@@ -18,6 +18,13 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
+        path: `${__dirname}/public/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
         path: `${__dirname}/src/images`,
       },
     },
