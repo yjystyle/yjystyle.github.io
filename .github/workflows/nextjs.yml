@@ -81,12 +81,12 @@ jobs:
       - uses: actions/download-artifact@master
         with:
           #name: page
-          path: .
+          path: ./out
       - uses: actions/configure-pages@v1
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: .
+          path: ./out
 
   # Deployment job
   deploy:
