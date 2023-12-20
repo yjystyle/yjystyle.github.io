@@ -66,7 +66,7 @@ module.exports = () => {
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
-    basePath: 'yjystyle.github.io',
+    basePath: '/page',
     images: {
       unoptimized: true,
       remotePatterns: [
