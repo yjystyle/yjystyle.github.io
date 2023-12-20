@@ -66,7 +66,7 @@ module.exports = () => {
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
     },
-    basePath: '/',
+    basePath: '/main',
     images: {
       unoptimized: true,
       remotePatterns: [
