@@ -3,37 +3,22 @@ title: giscus 항상 보이게 하기
 date: '2023-12-26'
 tags: ['markdown', 'code', 'features']
 draft: false
-summary: 햐
+summary: giscus 항상 보이게 하기
 layout: PostLayout
 ---
 
-A sample post with markdown.
-
-## Inline Highlighting
-
-Sample of inline highlighting `sum = parseInt(num1) + parseInt(num2)`
-
-## Code Blocks
-
-Some Javascript code
+`components/Comments.tsx` 에서 `useState(true)`로 변경해주면 된다.
 
 ```javascript
-var num1, num2, sum
-num1 = prompt('Enter first number')
-num2 = prompt('Enter second number')
-sum = parseInt(num1) + parseInt(num2) // "+" means "add"
-alert('Sum = ' + sum) // "+" means combine into a string
-```
-
-Some Python code 🐍
-
-```python
-def fib():
-    a, b = 0, 1
-    while True:            # First iteration:
-        yield a            # yield 0 to start with and then
-        a, b = b, a + b    # a will now be 1, and b will also be 1, (0 + 1)
-
-for index, fibonacci_number in zip(range(10), fib()):
-     print('{i:3}: {f:3}'.format(i=index, f=fibonacci_number))
+export default function Comments({ slug }: { slug: string }) {
+  const [loadComments, setLoadComments] = useState(true)
+  return (
+    <>
+      {!loadComments && <button onClick={() => setLoadComments(true)}>Load Comments</button>}
+      {siteMetadata.comments && loadComments && (
+        <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
+      )}
+    </>
+  )
+}
 ```
