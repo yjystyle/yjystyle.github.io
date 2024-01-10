@@ -3,7 +3,7 @@ const siteMetadata = {
   title: '여구 블로그',
   author: '여구',
   headerTitle: 'YeoGoo Blog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  description: '',
   language: 'ko-kr',
   theme: 'system', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
