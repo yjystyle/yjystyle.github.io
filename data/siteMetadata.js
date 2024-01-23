@@ -1,8 +1,8 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: '여구 블로그',
+  title: '여구의 기록',
   author: '여구',
-  headerTitle: 'YeoGoo Blog',
+  headerTitle: '여구의 기록',
   description: '',
   language: 'ko-kr',
   theme: 'system', // system, dark or light
