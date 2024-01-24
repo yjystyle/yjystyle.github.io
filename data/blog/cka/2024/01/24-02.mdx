@@ -5,18 +5,88 @@ tags: ['k8s']
 draft: false
 layout: PostSimple
 ---
+## 준비
+우선 `gcloud init` 이전에 구글 계정과 GCP 프로젝트가 준비되어야 한다.
+새로운 계정으로 GCP를 시작하면 90일동안 $300 만큼 사용할 수 있으니 웬만하면 생성해서 하자.
+
+## SDK를 통한 gcloud 설정
 1. 기본 VM Region 및 Zone 설정
 ```bash
 gcloud init
 gcloud auth login
-gcloud config set compute/region asia-northeast3
+gcloud config set compute/region asia-northeast3    // 서울 
 gcloud config set compute/zone asia-northeast3-a
+```
+2. 클라이언트 툴 설치  
+`cfssl`, `cfsslijson`, `kubectl` 설치
+`cfssl` 및 `cfssljson`은 PKI Infrastrue을 프로비저닝하고 TLS 인증서를 생성하기 위해 사용되는 CLI 유틸리티이다. 
 
-```
-2. 클라이언트 툴 설치
 ```bash
-gcloud init
+# 다운로드
+wget -q --show-progress --https-only --timestamping \
+  https://pkg.cfssl.org/R1.2/cfssl_linux-amd64 \
+  https://pkg.cfssl.org/R1.2/cfssljson_linux-amd64
 ```
+```bash
+# cfssl, cfssljson 실행 권한 부여
+chmod +x cfssl_linux-amd64 cfssljson_linux-amd64
+```
+```bash
+# cfssl 위치 변경
+sudo mv cfssl_linux-amd64 /usr/local/bin/cfssl
+```
+```bash
+# cfssljson 위치 변경
+sudo mv cfssljson_linux-amd64 /usr/local/bin/cfssljson
+```
+
+제대로 설치되었는지 확인해볼까요?!
+```bash
+cfssl version
+
+# 결과
+Version: 1.2.0
+Revision: dev
+Runtime: go1.6
+
+
+cfssljson --version
+
+# 결과
+flag provided but not defined: -version
+Usage of cfssljson:
+  -bare
+        the response from CFSSL is not wrapped in the API standard response
+  -f string
+        JSON input (default "-")
+  -stdout
+        output the response instead of saving to a file
+```
+cfssljson 은 Version 정보는 나오지 않는 것 같으나 설치는 잘 된 것으로 보자.
+
+## kubectl 설치
+```bash
+# 다운로드
+wget https://storage.googleapis.com/kubernetes-release/release/v1.8.0/bin/linux/amd64/kubectl
+```
+```bash
+# 실행권한 부여
+chmod +x kubectl
+```
+```bash
+# kubectl 위치 변경
+sudo mv kubectl /usr/local/bin/
+```
+```bash
+kubectl version --client
+
+# 결과
+Client Version: version.Info{Major:"1", Minor:"8", GitVersion:"v1.8.0", GitCommit:"6e937839ac04a38cac63e6a7a306c5d035fe7b0a", GitTreeState:"clean", BuildDate:"2017-09-28T22:57:57Z", GoVersion:"go1.8.3", Compiler:"gc", Platform:"linux/amd64"}
+```
+
+
+
+
 
 [이전 - kubernetes-the-hard-way (1)](/blog/cka/2024/01/24-01)   
-[다음 - kubernetes-the-hard-way (3)](/blog/cka/2024/01/24-02)
+[다음 - kubernetes-the-hard-way (3)](/blog/cka/2024/01/25-01)
